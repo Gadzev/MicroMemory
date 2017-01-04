@@ -1,4 +1,5 @@
 local card = require('./src/card')
+local cards = card.getCards()
 
 local background = nil
 local cursor
@@ -20,3 +21,5 @@ function love.draw()
 	--card.draw()
 	card.drawCards()
 end
+
+
