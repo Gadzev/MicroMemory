@@ -12,7 +12,7 @@ function love.load()
 	card.loadAssets()
 end
 
-function love.update() 
+function love.update(dt) 
 
 end
 
@@ -20,6 +20,17 @@ function love.draw()
 	love.graphics.draw(background, 0, 0)
 	--card.draw()
 	card.drawCards()
+end
+
+function love.mousepressed(x, y, button, istouch)
+	if button == 1 then
+		for i, card in ipairs(cards) do
+			if x >= card.x and x < card.x + card.width
+			and y >= card.y and y < card.y + card.height then
+				card.cardBack = love.graphics.newImage('assets/card-back-1.png')
+			end
+		end
+	end
 end
 
 

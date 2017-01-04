@@ -9,13 +9,16 @@ local card = {
 	y = INITIAL_Y,
 	cardBack = nil,
 	cardFace = nil,
+	width = 48,
+	height = 64
 };
 
 local cards = {}
 
 function card.create(card)
 	for i = 1, MAX_CARDS do
-		table.insert(cards, {x = card.x, y = card.y, cardBack = card.cardBack, cardFace = card.cardFace})
+		table.insert(cards, {x = card.x, y = card.y, cardBack = card.cardBack,
+							 cardFace = card.cardFace, width = card.width, height = card.height})
 	end
 end
 
