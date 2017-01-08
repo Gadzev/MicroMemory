@@ -1,8 +1,19 @@
-local CARDS_HORIZONTAL = 4
+local _ = require 'moses_min'
+
+local CARDS_HORIZONTAL = 3
 -- local CARDS_VERTICAL = 3
-local MAX_CARDS = 15
+local MAX_CARDS = 12
 local INITIAL_X = 64
 local INITIAL_Y = 74
+
+local images = {
+	'assets/1.png',
+	'assets/2.png',
+	'assets/3.png',
+	'assets/4.png',
+	'assets/5.png',
+	'assets/card-back-1.png'
+}
 
 local card = {
 	x = INITIAL_X,
@@ -15,11 +26,18 @@ local card = {
 
 local cards = {}
 
+-- Create the cards table, fill the cards with random images and then shuffle the table
 function card.create(card)
-	for i = 1, MAX_CARDS do
+	for i = 1, MAX_CARDS / 2 do
+		local rng = love.math.newRandomGenerator()
+		local r = rng:random(1, #images)
 		table.insert(cards, {x = card.x, y = card.y, cardBack = card.cardBack,
-							 cardFace = card.cardFace, width = card.width, height = card.height})
+							 cardFace = images[r], width = card.width, height = card.height})
+		table.insert(cards, {x = card.x, y = card.y, cardBack = card.cardBack,
+							 cardFace = images[r], width = card.width, height = card.height})
+		table.remove(images, r)
 	end
+	cards = _.shuffle(cards, os.time())
 end
 
 function card.loadAssets()

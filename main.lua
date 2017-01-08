@@ -27,10 +27,8 @@ function love.mousepressed(x, y, button, istouch)
 		for i, card in ipairs(cards) do
 			if x >= card.x and x < card.x + card.width
 			and y >= card.y and y < card.y + card.height then
-				card.cardBack = love.graphics.newImage('assets/card-back-1.png')
+				card.cardBack = love.graphics.newImage(card.cardFace)
 			end
 		end
 	end
 end
-
-
