@@ -21,7 +21,8 @@ local card = {
 	cardBack = nil,
 	cardFace = nil,
 	width = 48,
-	height = 64
+	height = 64,
+	match = false
 };
 
 local cards = {}
@@ -32,9 +33,9 @@ function card.create(card)
 		local rng = love.math.newRandomGenerator()
 		local r = rng:random(1, #images)
 		table.insert(cards, {x = card.x, y = card.y, cardBack = card.cardBack,
-							 cardFace = images[r], width = card.width, height = card.height})
+							 cardFace = images[r], width = card.width, height = card.height, match = card.match})
 		table.insert(cards, {x = card.x, y = card.y, cardBack = card.cardBack,
-							 cardFace = images[r], width = card.width, height = card.height})
+							 cardFace = images[r], width = card.width, height = card.height, match = card.match})
 		table.remove(images, r)
 	end
 	cards = _.shuffle(cards, os.time())
