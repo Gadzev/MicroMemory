@@ -1,4 +1,6 @@
-Gamestate = require('../gamestate')
+Gamestate = require('./libraries/gamestate')
+
+game = require ('./src/game')
 
 local menu = {}
 
@@ -8,7 +10,7 @@ end
 
 function menu:keyreleased(key, code)
 	if key == 'return' then
-		Gamestate.switch(main)
+		Gamestate.switch(game)
 	end
 end
 

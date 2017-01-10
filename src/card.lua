@@ -1,4 +1,4 @@
-local _ = require 'moses_min'
+local _ = require('./libraries/moses_min')
 
 local CARDS_HORIZONTAL = 3
 -- local CARDS_VERTICAL = 3
