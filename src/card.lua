@@ -3,16 +3,16 @@ local _ = require('./libraries/moses_min')
 local CARDS_HORIZONTAL = 3
 -- local CARDS_VERTICAL = 3
 local MAX_CARDS = 12
-local INITIAL_X = 64
-local INITIAL_Y = 74
+local INITIAL_X = 178
+local INITIAL_Y = 188
 
 local images = {
-	'assets/1.png',
-	'assets/2.png',
-	'assets/3.png',
-	'assets/4.png',
-	'assets/5.png',
-	'assets/card-back-1.png'
+	'assets/1-1.png',
+	'assets/1-2.png',
+	'assets/1-3.png',
+	'assets/1-4.png',
+	'assets/1-5.png',
+	'assets/1-6.png'
 }
 
 local card = {
@@ -20,8 +20,8 @@ local card = {
 	y = INITIAL_Y,
 	cardBack = nil,
 	cardFace = nil,
-	width = 48,
-	height = 64,
+	width = 124,
+	height = 178,
 	match = false
 };
 
@@ -42,7 +42,7 @@ function card.create(card)
 end
 
 function card.loadAssets()
-	card.cardBack = love.graphics.newImage('assets/card-back.png');
+	card.cardBack = love.graphics.newImage('assets/card-back-1-1.png');
 	card.create(card)
 end
 
@@ -54,22 +54,22 @@ end
 function card.drawCards()
 	local countHorizontal = 0
 	-- Adjust the space between the cards
-	local spaceX = 64
-	local spaceY = 74
+	local spaceX = 178
+	local spaceY = 188
 	-- Iterate through all the cards and draw them on the table
 	for i, card in ipairs(cards) do
 		if countHorizontal < CARDS_HORIZONTAL then
 			love.graphics.draw(card.cardBack, card.x, card.y)
-			spaceX = spaceX + 64
+			spaceX = spaceX + 178
 			card.x = spaceX
 			card.y = spaceY
 			countHorizontal = countHorizontal + 1
 		else
 			love.graphics.draw(card.cardBack, card.x, card.y)
 			card.y = spaceY
-			spaceY = spaceY + 74
+			spaceY = spaceY + 188
 			countHorizontal = 0
-			spaceX = 64
+			spaceX = 178
 		end
 	end
 end

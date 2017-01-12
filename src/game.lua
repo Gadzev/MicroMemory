@@ -23,7 +23,7 @@ function game:update(dt)
 	if cardTimer > 0.9 then
 		for i, card in ipairs(cards) do
 			if card.match == false then
-				card.cardBack = love.graphics.newImage('assets/card-back.png')
+				card.cardBack = love.graphics.newImage('assets/card-back-1-1.png')
 			end
 		end
 		cardTimer = 0
@@ -33,6 +33,7 @@ end
 
 function game:draw()
 	card.drawCards()
+	--card.draw()
 end
 
 function game:mousepressed(x, y, button, istouch)
