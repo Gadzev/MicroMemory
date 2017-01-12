@@ -1,6 +1,5 @@
 Gamestate = require('./libraries/gamestate')
 menu = require('./src/menu')
-game = require('./src/game')
 
 local background = nil
 local cursor

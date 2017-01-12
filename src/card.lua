@@ -47,7 +47,7 @@ function card.loadAssets()
 end
 
 function card.draw() 
-	love.graphics.draw(card.cardBack, card.x, card.y)
+	love.graphics.draw(card.cardBack, card.x, card.y, 0, 0.7, 0.7)
 	--love.graphics.print(table.getn(cards), 300, 200)
 end
 
