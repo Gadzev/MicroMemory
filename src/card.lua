@@ -1,7 +1,6 @@
 local _ = require('./libraries/moses_min')
 
 local CARDS_HORIZONTAL = 3
--- local CARDS_VERTICAL = 3
 local MAX_CARDS = 12
 local INITIAL_X = 178
 local INITIAL_Y = 188
@@ -48,7 +47,6 @@ end
 
 function card.draw() 
 	love.graphics.draw(card.cardBack, card.x, card.y, 0, 0.7, 0.7)
-	--love.graphics.print(table.getn(cards), 300, 200)
 end
 
 function card.drawCards()

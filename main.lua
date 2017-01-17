@@ -6,6 +6,9 @@ local cursor
 
 function love.load()
 	background = love.graphics.newImage('assets/background.jpg')
+	music = love.audio.newSource('assets/music.mp3')
+	music:setLooping(true)
+	music:play()
 	-- TODO: Change cursor image
 	cursor = love.mouse.newCursor('assets/cursor.png', 0, 0)
 	love.mouse.setCursor(cursor) 
