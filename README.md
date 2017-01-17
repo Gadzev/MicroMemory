@@ -1,7 +1,5 @@
-Професоре,
+# Love Memory
 
-поради ограничувањата на порталот за е-учење не можев да ви прикачам извршен фајл. 
+A memory pairs game i made for a "Graphics and visualization" course in uni. 
 
-На Linux дистрибуција можете играта да ја стартирате со "love ." од директориумот или со промена на .zip во .love
-
-На Windows исто изменете го .zip во .love и преместете го во директориумот на love рамката. 
+All image assets are drawn by me and are free to use for any purpose. 
